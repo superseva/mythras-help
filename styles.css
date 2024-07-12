@@ -1,0 +1,84 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 4px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    top: 40px;
+    /* Adjust this value if needed */
+    z-index: 999;
+}
+
+.grayed-out {
+    background-color: #f0f0f0;
+    color: #a0a0a0;
+}
+
+.ribbon {
+    display: inline-block;
+    padding: 0.2em 0.4em;
+    margin-right: 0.5em;
+    font-weight: bold;
+    color: white;
+    border-radius: 4px;
+}
+
+.offensive-ribbon {
+    background-color: rgb(255, 85, 0);
+}
+
+.defensive-ribbon {
+    background-color: rgb(0, 110, 255);
+}
+
+.sticky-header {
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.sticky-header button {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.sticky-header button.active {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.sticky-header button.toggle-active {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: absolute;
+    display: none;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1000;
+    max-width: 30rem;
+}
