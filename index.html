@@ -2,18 +2,21 @@
 <html>
 
 <head>
-    <title>Special Effects Table</title>
+    <title>Mythras Special Effects Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body>
+<body class="roboto-regular" style="font-size: 0.8rem;">
 
-    <h2>Special Effects Table</h2>
+    <h2>Mythras Special Effects Table</h2>
 
     <div class="sticky-header">
-        <button onclick="filterTable('Offensive', this)">Show Offensive Only</button>
-        <button onclick="filterTable('Defensive', this)">Show Defensive Only</button>
-        <button onclick="filterTable('All', this)">Show All</button>
+        <button onclick="filterTable('Offensive', this)"><span class="ribbon offensive-ribbon"></span>Show Offensive Only</button>
+        <button onclick="filterTable('Defensive', this)"><span class="ribbon defensive-ribbon"></span>Show Defensive Only</button>
+        <button onclick="filterTable('All', this)"><span class="ribbon combined-ribbon"></span>Show All</button>
         <span style="display: inline-block; width: 5rem; text-align: center;">||</span>
         <button id="criticalFilterBtn" onclick="toggleCriticalFilter(this)">Toggle Critical Rolls</button>
         <button id="specificWeaponRollFilterBtn" onclick="specificWeaponRollFilterBtn(this)">Toggle Specific Weapon Rolls</button>
@@ -373,7 +376,6 @@
             <td></td>
         </tr>
     </table>
-
     <h2>Impale Effects Table</h2>
     <table>        
         <thead>
@@ -434,7 +436,7 @@
         </tbody>
     </table>
 
-    <div id="tooltip" class="tooltip"></div> <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip" data-html="true"></div> <!-- Tooltip container -->
 
     <script src="effects.js"></script> <!-- Include the effect.js file -->
     <script src="scripts.js"></script> <!-- Include the scripts.js file -->
