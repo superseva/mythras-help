@@ -98,8 +98,9 @@ function addRibbons() {
         if (tdDef.textContent === "X") {
             ribbons += '<span class="ribbon defensive-ribbon"></span>';
         }
-        if (tdOff.textContent !== "X" && tdDef.textContent !== "X") {
-            ribbons = '<span class="ribbon offensive-ribbon"></span><span class="ribbon defensive-ribbon"></span>';
+        if (tdOff.textContent == "X" && tdDef.textContent == "X") {
+           // ribbons = '<span class="ribbon offensive-ribbon"></span><span class="ribbon defensive-ribbon"></span>';
+           ribbons = '<span class="ribbon combined-ribbon"></span>';
         }
         effectCell.innerHTML = ribbons + effectCell.innerHTML;
 
