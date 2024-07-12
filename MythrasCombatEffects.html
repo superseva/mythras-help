@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Special Effects Table</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+    <h2>Special Effects Table</h2>
+
+    <div class="sticky-header">
+        <button onclick="filterTable('Offensive', this)">Show Offensive Only</button>
+        <button onclick="filterTable('Defensive', this)">Show Defensive Only</button>
+        <button onclick="filterTable('All', this)">Show All</button>
+        <span style="display: inline-block; width: 5rem; text-align: center;">||</span>
+        <button id="criticalFilterBtn" onclick="toggleCriticalFilter(this)">Toggle Critical Rolls</button>
+        <button id="specificWeaponRollFilterBtn" onclick="specificWeaponRollFilterBtn(this)">Toggle Specific Weapon Rolls</button>
+    </div>
+
+    <table id="specialEffectsTable">
+        <tr>
+            <th>Special Effect</th>
+            <th>Offensive</th>
+            <th>Defensive</th>
+            <th>Specific Weapon Type</th>
+            <th>Specific Roll</th>
+            <th>Stackable</th>
+        </tr>
+        <tr>
+            <td id="accidentalInjury">Accidental Injury</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>Attacker Fumbles</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="arise">Arise</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="bash">Bash</td>
+            <td>X</td>
+            <td></td>
+            <td>Shields or Bludgeoning</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="bleed">Bleed</td>
+            <td>X</td>
+            <td></td>
+            <td>Cutting Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="blindOpponent">Blind Opponent</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>Defender Criticals</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="bypassArmour">Bypass Armour</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>Attacker Criticals</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td id="chooseLocation">Choose Location</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>See Description</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="circumventCover">Circumvent Cover</td>
+            <td>X</td>
+            <td></td>
+            <td>Ranged Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="circumventParry">Circumvent Parry</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>Attacker Criticals</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="closeRange">Close Range</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="compelSurrender">Compel Surrender</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="damageWeapon">Damage Weapon</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>Defender Criticals</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="disarmOpponent">Disarm Opponent</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="dropFoe">Drop Foe</td>
+            <td>X</td>
+            <td></td>
+            <td>Ranged Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="duckBack">Duck Back</td>
+            <td>X</td>
+            <td></td>
+            <td>Ranged Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="enhanceParry">Enhance Parry</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>Defender Criticals</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="entangle">Entangle</td>
+            <td>X</td>
+            <td>X</td>
+            <td>Entangling Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="flurry">Flurry</td>
+            <td>X</td>
+            <td></td>
+            <td>Unarmed</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="forceFailure">Force Failure</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>Opponent Fumbles</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td id="grip">Grip</td>
+            <td>X</td>
+            <td></td>
+            <td>Unarmed</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="impale">Impale</td>
+            <td>X</td>
+            <td></td>
+            <td>Impaling Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="killSilently">Kill Silently</td>
+            <td>X</td>
+            <td></td>
+            <td>Small Weapons</td>
+            <td>See Description</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="marksman">Marksman</td>
+            <td>X</td>
+            <td></td>
+            <td>Ranged Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="maximiseDamage">Maximise Damage</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>Attacker Criticals</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="openRange">Open Range</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="overextendOpponent">Overextend Opponent</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="overpenetration">Overpenetration</td>
+            <td>X</td>
+            <td></td>
+            <td>Ranged Weapons</td>
+            <td>Critical Only</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="pinDown">Pin Down</td>
+            <td>X</td>
+            <td></td>
+            <td>Ranged Weapons</td>
+            <td></td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td id="pinWeapon">Pin Weapon</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td>Critical Only</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="prepareCounter">Prepare Counter</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td id="pressAdvantage">Press Advantage</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="rapidReload">Rapid Reload</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="remise">Remise</td>
+            <td>X</td>
+            <td></td>
+            <td>Small Weapon Only</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="scarFoe">Scar Foe</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="selectTarget">Select Target</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>Attacker Fumbles</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="slipFree">Slip Free</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td>Defender Criticals</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="standFast">Stand Fast</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="stunLocation">Stun Location</td>
+            <td>X</td>
+            <td></td>
+            <td>Bludgeoning Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="sunder">Sunder</td>
+            <td>X</td>
+            <td></td>
+            <td>Axes, Two Handed Weapons</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="takeWeapon">Take Weapon</td>
+            <td>X</td>
+            <td>X</td>
+            <td>Unarmed</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="tripOpponent">Trip Opponent</td>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="weaponMalfunction">Weapon Malfunction</td>
+            <td>X</td>
+            <td></td>
+            <td>Ranged Weapons</td>
+            <td>Attacker Fumbles</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="withdraw">Withdraw</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div id="tooltip" class="tooltip"></div> <!-- Tooltip container -->
+
+    <script src="effects.js"></script> <!-- Include the effect.js file -->
+    <script src="scripts.js"></script> <!-- Include the scripts.js file -->
+
+</body>
+
+</html>
