@@ -153,6 +153,22 @@ var specialEffectDescriptions = {
   },
   sunder: {
     title: "Sunder",
-    text: "The attacker may use a suitable weapon to damage the armour or natural protection of an opponent. Any weapon damage, after reductions for parrying or magic, is applied against the Armour Point value of the protection. Surplus damage in excess of its Armour Points is then used to reduce the AP value of that armour(ed) location—ripping straps, bursting rings, creasing plates or tearing away sections."
+    text: "The attacker may use a suitable weapon to damage the armour or natural protection of an opponent. Any weapon damage, after reductions for parrying or magic, is applied against the Armour Point value of the protection. Surplus damage in excess of its Armour Points is then used to reduce the AP value of that armour(ed) location—ripping straps, bursting rings, creasing plates or tearing away the hide, scales or chitin of monster. If any damage remains after the protection has been reduced to zero AP, it carries over onto the Hit Points of the location struck."
+  },
+  takeWeapon: {
+    title: "Take Weapon",
+    text: "Allows an unarmed character to yank or twist an opponent’s weapon out of his hand. The opponent must make an opposed roll of his Combat Style against the character’s original Unarmed roll. If the target loses, his weapon is taken and from that moment on, may be used by the character instead. Take Weapon differs from Disarm Opponent in that the size of the weapon is largely irrelevant. However, the technique only works on creatures of up to twice the attacker’s STR."
+  },
+  tripOpponent: {
+    title: "Trip Opponent",
+    text: "The character attempts to overbalance or throw his opponent to the ground. The opponent must make an opposed roll of his Brawn, Evade or Acrobatics against the character’s original roll. If the target fails, he falls prone. Quadruped opponents (or creatures with even more legs) may substitute their Athletics skill for Evade, and treat the roll as one difficulty grade easier."
+  },
+  weaponMalfunction: {
+    title: "Weapon Malfunction (Firearms)",
+    text: "The attacker’s weapon malfunctions in such a way that it is rendered useless until time can be spent repairing it."
+  },
+  withdraw: {
+    title: "Withdraw",
+    text: "The defender may automatically withdraw out of reach, breaking off engagement with that particular opponent."
   }
 };
